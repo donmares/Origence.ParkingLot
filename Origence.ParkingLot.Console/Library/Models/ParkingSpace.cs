@@ -1,23 +1,19 @@
 ﻿using Origence.ParkingLot.Console.Library.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Origence.ParkingLot.Console.Library.Interfaces;
 
 namespace Origence.ParkingLot.Console.Library.Models
 {
     public class ParkingSpace
     {
-        private VehicleType _vehicleType;
-        public ParkingSpace(VehicleType vehicleType)
+        private IVehicle _vehicle;
+        public ParkingSpace(IVehicle vehicle)
         {
-            _vehicleType = vehicleType;
+            _vehicle = vehicle;
         }
 
         public int SpacesOccupied
         {
-            get { return VehicleSize.GetVehicleSize(_vehicleType); }
+            get { return _vehicle.SpacesRequired; }
         }
 
     }

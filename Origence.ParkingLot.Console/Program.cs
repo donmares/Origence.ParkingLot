@@ -14,7 +14,7 @@ for (int i = 0; i<6; i++)
 {
     var van = new Van();
 
-    if (ParkingLot.CanPark(VehicleType.Van))
+    if (ParkingLot.CanPark(van))
     {
         ParkingLot.ParkVehicle(van);
     }
@@ -26,7 +26,7 @@ for (int i = 0; i < 10; i++)
 {
     var motrocycle = new Motorcycle();
 
-    if (ParkingLot.CanPark(VehicleType.Motorcycle))
+    if (ParkingLot.CanPark(motrocycle))
     {
         ParkingLot.ParkVehicle(motrocycle);
     }
@@ -39,7 +39,7 @@ for (int i = 0; i < 10; i++)
 {
     var car = new Car();
 
-    if (ParkingLot.CanPark(VehicleType.Car))
+    if (ParkingLot.CanPark(car))
     {
         ParkingLot.ParkVehicle(car);
     }
@@ -53,7 +53,7 @@ Console.WriteLine("Begin parking 1 van that should overflow");
 
     var van2 = new Van();
 
-    if (ParkingLot.CanPark(VehicleType.Van))
+    if (ParkingLot.CanPark(van2))
     {
         ParkingLot.ParkVehicle(van2);
     }

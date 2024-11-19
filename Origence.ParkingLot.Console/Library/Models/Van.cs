@@ -15,9 +15,9 @@ namespace Origence.ParkingLot.Console.Library.Models
         {
             return _vehicleType;
         }
-        public int GetSpacesRequired()
+        public int SpacesRequired
         {
-            return VehicleSize.GetVehicleSize(_vehicleType);
+            get { return 3; }
         }
     }
 }

@@ -23,19 +23,18 @@ namespace Origence.ParkingLot.Console.Library.Models
         public bool IsEmpty { get { return _parkingSpaces.Count() == 0; } }
         public bool isFull { get { return _parkingSpaces.Count() == _totalSpaces; } }
 
-        public bool CanPark(VehicleType vehicleType)
+        public bool CanPark(IVehicle vehicle)
         {
-            return SpotsRemaining - VehicleSize.GetVehicleSize(vehicleType) > 0; 
+            return SpotsRemaining - vehicle.SpacesRequired > 0; 
         }
 
         public void ParkVehicle(IVehicle vehicle)
         {
             if (vehicle == null) throw new ArgumentNullException(nameof(vehicle));
 
-            var vehicleType = vehicle.GetVehicleType();
-            if (CanPark(vehicleType))
+            if (CanPark(vehicle))
             {
-                var parkingSpace = new ParkingSpace(vehicleType);
+                var parkingSpace = new ParkingSpace(vehicle);
                 _parkingSpaces.Add(parkingSpace);
             }
             else

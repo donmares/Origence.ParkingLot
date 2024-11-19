@@ -6,6 +6,6 @@ namespace Origence.ParkingLot.Console.Library.Interfaces
     public interface IVehicle
     {
         VehicleType GetVehicleType();
-        int GetSpacesRequired();
+        int SpacesRequired { get; }
     }
 }

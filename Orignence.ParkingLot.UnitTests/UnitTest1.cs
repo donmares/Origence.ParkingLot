@@ -16,12 +16,12 @@ namespace Orignence.ParkingLot.UnitTests
         public void TestMotorcyle2Spaces()
         {
             var motorcycle = new Mock<IVehicle>();
-            motorcycle.Setup(v => v.GetSpacesRequired()).Returns(2);
+            motorcycle.Setup(v => v.SpacesRequired).Returns(2);
             motorcycle.Setup(v => v.GetVehicleType()).Returns(VehicleType.Motorcycle);
 
             var parkingLot = new Origence.ParkingLot.Console.Library.Models.ParkingLot(5);
             parkingLot.ParkVehicle(motorcycle.Object);
-            Assert.IsFalse(parkingLot.SpotsRemaining == 3);
+            Assert.IsTrue(parkingLot.SpotsRemaining == 3);
         }
     }
 }
