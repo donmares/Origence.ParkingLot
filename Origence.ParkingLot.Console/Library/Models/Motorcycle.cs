@@ -12,13 +12,11 @@ namespace Origence.ParkingLot.Console.Library.Models
     {
         public Motorcycle()
         {
-            _vehicleType = VehicleType.Motorcycle;
         }
 
-        private readonly VehicleType _vehicleType;
-        public VehicleType GetVehicleType()
+        public VehicleType VehicleType
         {
-            return _vehicleType;
+            get { return VehicleType.Motorcycle; }
         }
         public int SpacesRequired
         {

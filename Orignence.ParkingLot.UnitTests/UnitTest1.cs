@@ -17,7 +17,7 @@ namespace Orignence.ParkingLot.UnitTests
         {
             var motorcycle = new Mock<IVehicle>();
             motorcycle.Setup(v => v.SpacesRequired).Returns(2);
-            motorcycle.Setup(v => v.GetVehicleType()).Returns(VehicleType.Motorcycle);
+            motorcycle.Setup(v => v.VehicleType).Returns(VehicleType.Motorcycle);
 
             var parkingLot = new Origence.ParkingLot.Console.Library.Models.ParkingLot(5);
             parkingLot.ParkVehicle(motorcycle.Object);

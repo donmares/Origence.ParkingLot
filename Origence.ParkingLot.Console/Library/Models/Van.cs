@@ -7,13 +7,11 @@ namespace Origence.ParkingLot.Console.Library.Models
     {
         public Van()
         {
-            _vehicleType = VehicleType.Van;
         }
 
-        private readonly VehicleType _vehicleType;
-        public VehicleType GetVehicleType()
+        public VehicleType VehicleType
         {
-            return _vehicleType;
+            get { return VehicleType.Van; }
         }
         public int SpacesRequired
         {
